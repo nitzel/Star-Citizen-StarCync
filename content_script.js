@@ -138,7 +138,7 @@ function executeScript(GOT, grabList) {
 
             // additional headers, here we only use the RSI token from the cookie.
             __hs: function () {
-                return { "X-Rsi-Token": this.getCookie('Rsi-Token') };
+                return { "X-Rsi-Token": this.getCookie('Rsi-Token'), "content-type": "application/json; charset=utf-8;" };
             },
 
             /**
