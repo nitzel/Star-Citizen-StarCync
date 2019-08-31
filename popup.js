@@ -146,19 +146,18 @@ function createToggleCallback(id1, id2) {
 }
 
 
+$('.menu .item').tab();
+
 $('#btnFollowOrg').click(followORG);
 $('#btnUnfollowOrg').click(unfollowORG);
 
-$('#btnToggleBulkOptions').click(createToggleCallback("#btnToggleBulkOptions", "#bulkOptions"));
 $('#btnAddBulk').click(addfromList)
 $('#btnRemoveBulk').click(removefromList)
 
-$('#btnToggleBackupOptions').click(createToggleCallback("#btnToggleBackupOptions", "#backupOptions"))
 $('#backupFileInput').click(loadData)
 $('#btnSaveToFile').click(saveToTextFile)
 $('#btnSaveToChromeSync').click(saveToChromeSync);
 $('#btnRestoreFromChromeSync').click(loadFromChromeSync);
 
-$('#btnToggleDestructiveOptions').click(createToggleCallback("#btnToggleDestructiveOptions", "#destructiveOptions"))
 $('#eraseALL').click(eraseALL);
 $('#eraseBackup').click(eraseBackup); 

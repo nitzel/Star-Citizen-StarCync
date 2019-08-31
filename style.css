@@ -1,4 +1,16 @@
-.item.link, .ui.segment, textarea {
+body {
+  background-color: black;
+  background-image: url('images/background/star-citizen.jpg');
+  width: 300px;
+  text-align: center; 
+  
+}
+
+.item, .ui.segment {
+  color: white !important;
+}
+
+.item.active, .ui.segment, textarea {
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
 

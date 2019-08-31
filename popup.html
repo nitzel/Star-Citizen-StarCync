@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body style="width: 300px; text-align: center; background-image: url('images/background/star-citizen.jpg');">
+<body>
 
   <div class="ui segment">
     <div class="ui buttons mini">
@@ -19,12 +19,12 @@
   
   <div id="sc-tab-menu">
     <div class="ui top attached tabular menu">
-      <div class="item link active" id="btnToggleBulkOptions" title="Add/remove a list of contacts">Bulk</div>
-      <div class="item link" id="btnToggleBackupOptions" title="Create and load backups">Backup</div>
-      <div class="item link" id="btnToggleDestructiveOptions" title="Remove all the things">Erase</div>
+      <div data-tab="bulkOptions" class="item" id="btnToggleBulkOptions" title="Add/remove a list of contacts">Bulk</div>
+      <div data-tab="backupOptions" class="item" id="btnToggleBackupOptions" title="Create and load backups">Backup</div>
+      <div data-tab="destructiveOptions" class="item" id="btnToggleDestructiveOptions" title="Remove all the things">Erase</div>
     </div>
   
-    <div class="ui bottom attached active tab segment" id="bulkOptions">
+    <div class="ui bottom attached tab segment" data-tab="bulkOptions">
       <span color="white">Enter RSI Handles</span><br /><span color="white"> (split by commas or one name per line)</span><br />
       <textarea id="bulkOptionsInput" name="textarea" style="width:250px;height:150px;"></textarea><br />
       <div class="ui buttons mini">
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="ui bottom attached tab segment" id="backupOptions">
+    <div class="ui bottom attached tab segment" data-tab="backupOptions">
       <span color="white">Restore from text file</span><br />
       <span color="white">(Names split by commas or one name per line)</span>
       <form id="backupFileForm">
@@ -50,7 +50,7 @@
       <button id="btnSaveToChromeSync" class="ui button mini">Backup to Chrome Sync</button><br />
     </div>
     
-    <div class="ui bottom attached tab segment" id="destructiveOptions">
+    <div class="ui bottom attached tab segment" data-tab="destructiveOptions">
       <div class="ui buttons mini">
         <button id="eraseALL" class="ui button mini negative">Erase all RSI Contacts</button><br />
         <div class="or"></div>
@@ -60,6 +60,7 @@
   </div>
   
   <script src="jquery-3.4.1.js"></script>
+  <script src="semantic.js"></script>
   <script src="popup.js"></script>
 
 </body>
