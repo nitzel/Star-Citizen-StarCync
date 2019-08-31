@@ -1,0 +1,12 @@
+.item.link, .ui.segment, textarea {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.ui.attached.tab.segment {
+  visibility: none;
+}
+
+.ui.attached.tab.segment.active {
+  visibility: visible;
+}
+

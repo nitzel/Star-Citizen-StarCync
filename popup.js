@@ -125,20 +125,40 @@ function loadData() {
     };
 }
 
+function toggle(id) {
+    const active = 'active';
+    const element = $(id);
+    if (element.hasClass(active)) {
+        element.removeClass(active);
+    }
+    else {
+        element.addClass(active);
+    }   
+}
+
+function createToggleCallback(id1, id2) {
+    return () => {
+        $("#sc-tab-menu .segment.active, #sc-tab-menu .item.active").removeClass('active');
+        
+        toggle(id1);
+        toggle(id2);
+    }
+}
+
 
 $('#btnFollowOrg').click(followORG);
 $('#btnUnfollowOrg').click(unfollowORG);
 
-$('#btnToggleBulkOptions').click(() => $("#bulkOptions").toggle());
+$('#btnToggleBulkOptions').click(createToggleCallback("#btnToggleBulkOptions", "#bulkOptions"));
 $('#btnAddBulk').click(addfromList)
 $('#btnRemoveBulk').click(removefromList)
 
-$('#btnToggleBackupOptions').click(() => $("#backupOptions").toggle())
+$('#btnToggleBackupOptions').click(createToggleCallback("#btnToggleBackupOptions", "#backupOptions"))
 $('#backupFileInput').click(loadData)
 $('#btnSaveToFile').click(saveToTextFile)
 $('#btnSaveToChromeSync').click(saveToChromeSync);
 $('#btnRestoreFromChromeSync').click(loadFromChromeSync);
 
-$('#btnToggleDestructiveOptions').click(() => $("#destructiveOptions").toggle())
+$('#btnToggleDestructiveOptions').click(createToggleCallback("#btnToggleDestructiveOptions", "#destructiveOptions"))
 $('#eraseALL').click(eraseALL);
 $('#eraseBackup').click(eraseBackup); 

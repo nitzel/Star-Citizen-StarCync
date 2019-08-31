@@ -4,61 +4,59 @@
 <head style="height: 100px">
   <title>activity</title>
   <link rel="stylesheet" type="text/css" href="semantic.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body style="width: 300px; text-align: center; background-image: url('images/background/star-citizen.jpg');">
 
-  <div class="ui buttons mini">
-    <button id="btnFollowOrg" class="ui positive button">Follow Org</button>
-    <div class="or"></div>
-    <button id="btnUnfollowOrg" class="ui negative button">Unfollow Org</button>
-  </div>
-  <br />
-
-  <button id="btnToggleBulkOptions" class="ui button mini">[Bulk add/remove options]</button><br />
-  <div id="bulkOptions" style="display: none">
-    <hr />
-    <span color="white">Enter RSI Handles</span><br /><span color="white"> (split by commas or one name per line)</span><br />
-    <textarea id="bulkOptionsInput" name="textarea" style="width:250px;height:150px;"></textarea><br />
+  <div class="ui segment">
     <div class="ui buttons mini">
-      <button id="btnAddBulk" class="ui positive button">Follow Org</button>
+      <button id="btnFollowOrg" class="ui positive button">Follow Org</button>
       <div class="or"></div>
-      <button id="btnRemoveBulk" class="ui negative button">Unfollow Org</button>
+      <button id="btnUnfollowOrg" class="ui negative button">Unfollow Org</button>
     </div>
-    <hr />
   </div>
-  <br />
-
-  <button id="btnToggleBackupOptions" class="ui button mini">[Backup/Restore options]</button><br />
-  <div id="backupOptions" style="display: none">
-    <hr />
-
-    <span color="white">Restore from text file</span><br />
-    <span color="white">(Names split by commas or one name per line)</span>
-    <form id="backupFileForm">
-      <p>
-        <input id="backupFilePath" accept='text/plain' name="file" type="file" />
-      </p>
-    </form>
-
-    <button id="btnSaveToFile" class="ui button mini">Backup to text file</button><br />
-    <hr />
-    <span color="white">Experimental!!</span><br />
-    <button id="btnRestoreFromChromeSync" class="ui button mini">Restore from Chrome Sync to RSI</button><br />
-    <button id="btnSaveToChromeSync" class="ui button mini">Backup to Chrome Sync</button><br />
-    <hr />
-  </div>
-  <br />
-
-  <button id="btnToggleDestructiveOptions" class="ui button mini">[Destructive options]</button><br />
-  <div id="destructiveOptions" style="display: none">
-    <hr />
-    <div class="ui buttons mini">
-      <button id="eraseALL" class="ui button mini negative">Erase all RSI Contacts</button><br />
-      <div class="or"></div>
-      <button id="eraseBackup" class="ui button mini negative">Erase Chrome Sync backup</button><br />
+  
+  <div id="sc-tab-menu">
+    <div class="ui top attached tabular menu">
+      <div class="item link active" id="btnToggleBulkOptions" title="Add/remove a list of contacts">Bulk</div>
+      <div class="item link" id="btnToggleBackupOptions" title="Create and load backups">Backup</div>
+      <div class="item link" id="btnToggleDestructiveOptions" title="Remove all the things">Erase</div>
     </div>
-    <hr />
+  
+    <div class="ui bottom attached active tab segment" id="bulkOptions">
+      <span color="white">Enter RSI Handles</span><br /><span color="white"> (split by commas or one name per line)</span><br />
+      <textarea id="bulkOptionsInput" name="textarea" style="width:250px;height:150px;"></textarea><br />
+      <div class="ui buttons mini">
+        <button id="btnAddBulk" class="ui positive button">Follow</button>
+        <div class="or"></div>
+        <button id="btnRemoveBulk" class="ui negative button">Unfollow</button>
+      </div>
+    </div>
+
+    <div class="ui bottom attached tab segment" id="backupOptions">
+      <span color="white">Restore from text file</span><br />
+      <span color="white">(Names split by commas or one name per line)</span>
+      <form id="backupFileForm">
+        <p>
+          <input id="backupFilePath" accept='text/plain' name="file" type="file" />
+        </p>
+      </form>
+
+      <button id="btnSaveToFile" class="ui button mini">Backup to text file</button><br />
+      <hr />
+      <span color="white">Experimental!!</span><br />
+      <button id="btnRestoreFromChromeSync" class="ui button mini">Restore from Chrome Sync to RSI</button><br />
+      <button id="btnSaveToChromeSync" class="ui button mini">Backup to Chrome Sync</button><br />
+    </div>
+    
+    <div class="ui bottom attached tab segment" id="destructiveOptions">
+      <div class="ui buttons mini">
+        <button id="eraseALL" class="ui button mini negative">Erase all RSI Contacts</button><br />
+        <div class="or"></div>
+        <button id="eraseBackup" class="ui button mini negative">Erase Chrome Sync backup</button><br />
+      </div>
+    </div>
   </div>
   
   <script src="jquery-3.4.1.js"></script>
